@@ -1,0 +1,59 @@
+# Sculpta Art
+
+This is a real world e-commerce site which uses Stripe for payments and Cloudinary for image hosting. It is built with SvelteKit and TypeScript, and is currently in production!
+
+## The Stack
+
+- ⚙️ [SvelteKit]("https://kit.svelte.dev/docs/introduction"): Full stack JS framework that handles our server and client side code
+- 💦 [Drizzle]("https://orm.drizzle.team/docs/overview"): Lightweight high power ORM for interfacing with our DB
+- 🌩️ [Cloudinary]("https://svelte.cloudinary.dev/"): Image hosting and manipulation
+- 💳 [Stripe]("https://stripe.com/docs"): Payment processing
+- 🚀 [Vercel]("https://vercel.com/home"): Serverless hosting and database
+- 🎨 [ShadCN for Svelte]("https://www.shadcn-svelte.com/"): Beautifully designed components
+- 🖌️ [TailwindCSS]("https://tailwindcss.com/docs/installation"): Inline styles
+- 🔒 [Lucia V3]("https://v3.lucia-auth.com/"): Authentication library and OAuth helpers
+- 📦 [Pnpm]("https://pnpm.io/"): Package manager
+
+## Getting Started
+
+In order to run this project you will need to setup **Cloudinary, Stripe, GitHub OAuth, and PlanetScale**.
+
+### Cloudinary
+
+1. Create a Cloudinary account: https://cloudinary.com/users/register_free
+2. Create a new Cloudinary project, and add the cloud name to your `.env`:
+   `VITE_PUBLIC_CLOUDINARY_CLOUD_NAME="your env here"`
+3. [Create a new upload preset]("https://cloudinary.com/documentation/upload_presets#managing_upload_presets_using_the_settings_ui"), and add the preset name to your `.env`:
+   `PUBLIC_CLOUDINARY_UPLOAD_PRESET="your env here"`
+4. Add your images into your cloudinary account, then insert them into the `seed.ts` file where it is marked "TODO CLOUDINARY:"
+
+### Stripe
+
+1. Create a Stripe account: https://dashboard.stripe.com/register
+2. Get your (TEST) public and secret keys, and add them to the `.env`:
+   `PUBLIC_STRIPE_PUBLIC_KEY="pk_test_..."`
+   `STRIPE_SECRET_KEY="sk_test_..."`
+3. Create your products in stripe, then add them to the `seed.ts` file where it is marked "TODO STRIPE:" (it is also a good idea to change the products, prices, and images in the `seed.ts` file to match your own products)
+4. Install the stripe CLI and get webhook signing secret: https://stripe.com/docs/stripe-cli, then add it your your `.env`:
+   `STRIPE_WEBHOOK_SECRET="whsec_..."`
+
+### GitHub OAuth
+
+1. Create a new GitHub OAuth app: https://github.com/settings/developers, make sure you set the redirect url to `http://localhost:5173/auth/callback/github`
+2. Add your client id and secret to the `.env`:
+   `GITHUB_CLIENT_ID="your env here"`
+   `GITHUB_CLIENT_SECRET="your env here"`
+
+### Run the project
+
+1. Install the dependencies with `pnpm i`
+2. Run the project with `pnpm run dev`
+
+## Contributors
+
+_Thanks to all for your great code!_
+
+- [llmaboi](https://github.com/llmaboi)
+- [Peter Buschenreiter](https://github.com/Peter-512)
+- [Miguel Gargallo](https://github.com/miguelgargallo)
+- [Patrick](https://github.com/PatrickG)
