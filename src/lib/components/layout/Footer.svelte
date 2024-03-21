@@ -17,7 +17,11 @@
 		<!-- Contact Information -->
 		<div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 mb-4 sm:mb-0">
 			<h3 class=" font-semibold mb-2">Contact Us</h3>
-			<p>Email: <a href="mailto:support@tpgstudios.art">support@tpgstudios.art</a></p>
+			<p>Email: 
+				<a href="mailto:support@tpgstudios.art" class="hover:text-neutral-300 text-sm">
+					support@sculpta.art
+				</a>
+			</p>
 		</div>
 
 		<!-- Social Media Links -->
@@ -27,7 +31,7 @@
 				<!-- <a href="#" class="text-neutral-800 hover:text-neutral-300"><i class="fab fa-facebook"></i></a>
 		  <a href="#" class="text-neutral-800 hover:text-neutral-300"><i class="fab fa-twitter"></i></a> -->
 				<a
-					href="https://www.instagram.com/thatll_play_golf"
+					href="https://www.instagram.com/"
 					class="text-neutral-800 hover:text-neutral-300"
 				>
 					<Instagram class="w-4 h-4" />
