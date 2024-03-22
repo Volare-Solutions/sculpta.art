@@ -25,7 +25,7 @@
 				</div>
 				<a
 					class="uppercase bg-black mt-14 px-7 py-3 font-light"
-					href="/products?tag=Watch This Drive"
+					href="/products?tag=Illuminate"
 				>
 					shop now</a
 				>

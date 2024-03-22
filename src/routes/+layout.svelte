@@ -8,10 +8,8 @@
 	import { fade } from 'svelte/transition';
 	import { inject } from '@vercel/analytics';
 	import * as Alert from '$lib/components/ui/alert';
-	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
 	inject();
-	injectSpeedInsights();
 
 	export let data;
 	const handleRemoveMenu = () => {
@@ -32,8 +30,8 @@
 </script>
 
 <svelte:head>
-	<title>Sculpta Art</title>
-	<meta name="description" content="TPG Studios, beauty crystalized and shipped straight to you." />
+	<title>Sculpta Art - 3D Printed Decor</title>
+	<meta name="description" content="Sculpta Art, unique 3D printed decor crafted and shipped straight to you." />
 </svelte:head>
 
 <CldOgImage
@@ -78,13 +76,13 @@
 		class="fixed sm:bottom-12 sm:right-12 bottom-1 right-0 z-[100] hidden"
 		id="added-to-cart"
 	>
-		<Alert.Root class="w-[500px] bg-black text-white max-w-[100vw]">
+		<Alert.Root class="w-40vw] bg-black text-white max-w-[100vw]">
 			<Alert.Title>Added to Your Cart!</Alert.Title>
 			<Alert.Description>Please proceed to the cart to checkout.</Alert.Description>
 		</Alert.Root>
 	</div>
 	<SpecialOffer isSoldOut={data.isSoldOut} remaining={data.numberLeft} />
-	<NavBar user={data.user} pieces={data.pieces} />
+	<NavBar user={data.user} />
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<span on:mouseenter={handleRemoveMenu} class="grow bg-neutral-100">
 		<slot />

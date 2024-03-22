@@ -31,7 +31,7 @@
 
 	<a class="text-4xl font-light mx-auto sm:mx-0" href="/">
 		<img src={Logo} alt="TPG" class=" h-[70px] hidden sm:flex" />
-		<img src={MobileLogo} alt="TPG" class="h-[70px] sm:hidden flex" />
+		<img src={MobileLogo} alt="TPG" class="h-[50px] sm:hidden flex" />
 	</a>
 
 	<div class="flex-row items-center hidden sm:flex gap-6">
@@ -49,7 +49,7 @@
 				<Menubar.Separator />
 				<a href="/products?tag=Illuminate">
 					<Menubar.Item>
-						Illuminate
+						Illuminate Collection
 					</Menubar.Item>
 				</a>
 				</Menubar.Content>

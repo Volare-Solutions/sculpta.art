@@ -19,11 +19,11 @@
 </script>
 
 <div
-	class="flex flex-col {collectionData.dark
+	class="flex flex-col justify-center items-center {collectionData.dark
 		? 'bg-gray-950 text-white'
 		: 'bg-neutral-100 text-black'} px-2 sm:px-4 pt-6 pb-4 sm:py-10 sm:items-center"
 >
-	<div>
+	<div class="text-center">
 		<span class="font-jura sm:text-4xl text-3xl">{collectionData.name}.</span>
 		<span class="font-jura sm:text-3xl text-2xl">{collectionData.tagLine}.</span>
 	</div>
