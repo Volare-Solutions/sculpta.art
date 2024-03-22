@@ -6,9 +6,7 @@
 		}),
 		mobile: z.boolean().default(false).optional(),
 		communication_emails: z.boolean().default(false).optional(),
-		social_emails: z.boolean().default(false).optional(),
 		marketing_emails: z.boolean().default(false).optional(),
-		security_emails: z.boolean()
 	});
 	type NotificationFormSchema = typeof notificationsFormSchema;
 </script>
@@ -87,36 +85,6 @@
 						</Form.Description>
 					</div>
 					<Switch includeInput {...attrs} bind:checked={$formData.marketing_emails} />
-				</Form.Control>
-			</Form.Field>
-			<Form.Field
-				{form}
-				name="social_emails"
-				class="flex flex-row items-center justify-between rounded-lg border p-4"
-			>
-				<Form.Control let:attrs>
-					<div class="space-y-0.5">
-						<Form.Label class="text-base">Social emails</Form.Label>
-						<Form.Description>
-							Receive emails for friend requests, follows, and more.
-						</Form.Description>
-					</div>
-					<Switch includeInput {...attrs} bind:checked={$formData.social_emails} />
-				</Form.Control>
-			</Form.Field>
-			<Form.Field
-				{form}
-				name="security_emails"
-				class="flex flex-row items-center justify-between rounded-lg border p-4"
-			>
-				<Form.Control let:attrs>
-					<div class="space-y-0.5">
-						<Form.Label class="text-base">Security emails</Form.Label>
-						<Form.Description>
-							Receive emails about your account activity and security.
-						</Form.Description>
-					</div>
-					<Switch includeInput {...attrs} bind:checked={$formData.security_emails} />
 				</Form.Control>
 			</Form.Field>
 		</div>

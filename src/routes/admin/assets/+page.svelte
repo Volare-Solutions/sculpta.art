@@ -16,7 +16,7 @@
 	let disableUpdate = true;
 	let showSuccess = false;
 
-	async function handleSubmit(info: unknown, mode: string) {
+	async function handleImageUpload(info: unknown, mode: string) {
 		const { public_id } = info as {
 			public_id: string;
 		};
@@ -102,6 +102,7 @@
 			src={data.asset?.mobileHomeImage}
 			aspectRatio="16:9"
 			objectFit="cover"
+			width={200}
 		/>
 		<CldUploadButton
 			uploadPreset={env.PUBLIC_CLOUDINARY_UPLOAD_PRESET}
@@ -109,7 +110,7 @@
 			class="w-full sm:w-48 px-4 py-2 rounded-lg border-gray-900 bg-white text-gray-900 border font-semibold hover:bg-gray-200"
 			onUpload={(res) => {
 				if (res.event === 'success') {
-					handleSubmit(res.info, 'mobile');
+					handleImageUpload(res.info, 'mobile');
 				}
 			}}
 		/>
@@ -122,6 +123,7 @@
 			src={data.asset?.desktopHomeImage}
 			aspectRatio="16:9"
 			objectFit="cover"
+			width={400}
 		/>
 		<CldUploadButton
 			uploadPreset={env.PUBLIC_CLOUDINARY_UPLOAD_PRESET}
@@ -129,7 +131,7 @@
 			class="w-full sm:w-48 px-4 py-2 rounded-lg border-gray-900 bg-white text-gray-900 border font-semibold hover:bg-gray-200"
 			onUpload={(res) => {
 				if (res.event === 'success') {
-					handleSubmit(res.info, 'desktop');
+					handleImageUpload(res.info, 'desktop');
 				}
 			}}
 		/>
