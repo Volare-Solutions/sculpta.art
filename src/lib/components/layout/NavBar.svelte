@@ -173,7 +173,7 @@
 			</div>
 		</a>
 		{#if user?.isAdmin}
-			<Button variant="link" href="/admin/products">admin</Button>
+			<a href="/admin/products">admin</a>
 		{/if}
 	</div>
 </nav>
