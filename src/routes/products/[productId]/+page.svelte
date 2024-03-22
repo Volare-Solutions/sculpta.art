@@ -169,7 +169,7 @@
 					>
 						<div class="flex flex-col items-start">
 							<div class="text-lg font-semibold">{size.name}</div>
-							<div class="text-sm font-light">{size.size}</div>
+							<div class="text-sm font-light">{size.width}x{size.height}</div>
 						</div>
 						<div>${size.price / 100}</div>
 					</button>
@@ -184,7 +184,8 @@
 						productName: data.product.name,
 						productImage: data.product.images[0].cloudinaryId,
 						size: {
-							size: data.product.sizes[selectedSizeIdx].size,
+							height: data.product.sizes[selectedSizeIdx].height,
+							width: data.product.sizes[selectedSizeIdx].width,
 							code: data.product.sizes[selectedSizeIdx].code,
 							stripePriceId: data.product.sizes[selectedSizeIdx].stripePriceId,
 							price: data.product.sizes[selectedSizeIdx].price

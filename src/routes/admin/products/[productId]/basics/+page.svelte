@@ -36,14 +36,12 @@
 		};
 	}}
 >
-	<h2 class="text-neutral-900 text-3xl font-bold">Update Product</h2>
-	<div class="gap-1.5 grid">
+	<div class="gap-1.5 grid w-full max-w-xl">
 		<Label for="name">Name</Label>
 		<Input
 			name="name"
 			required
 			id="name"
-			class="w-full max-w-md"
 			type="text"
 			placeholder="My Product"
 			value={data.productBasics.name}
@@ -51,13 +49,12 @@
 		/>
 	</div>
 
-	<div class="gap-1.5 grid">
+	<div class="gap-1.5 grid w-full max-w-xl">
 		<Label for="desc">Description</Label>
 		<Textarea
 			name="desc"
 			on:change={() => (disableUpdate = false)}
 			id="desc"
-			class="w-full max-w-md"
 			required
 			placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 			value={data.productBasics.desc}

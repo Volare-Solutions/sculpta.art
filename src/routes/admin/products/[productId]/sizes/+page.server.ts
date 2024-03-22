@@ -44,7 +44,9 @@ export const actions = {
 
 		const schema = zfd.formData({
 			code: zfd.text(),
-			size: zfd.text(),
+			name: zfd.text(),
+			height: zfd.numeric(),
+			width: zfd.numeric(),
 			price: zfd.numeric(),
 			stripePriceId: zfd.text(),
 			stripeProductId: zfd.text()
@@ -59,7 +61,9 @@ export const actions = {
 		await db
 			.update(productSize)
 			.set({
-				size: res.data.size,
+				name: res.data.name,
+				height: res.data.height,
+				width: res.data.width,
 				price: res.data.price,
 				stripePriceId: res.data.stripePriceId,
 				stripeProductId: res.data.stripeProductId
@@ -75,7 +79,9 @@ export const actions = {
 
 		const schema = zfd.formData({
 			code: zfd.text(),
-			size: zfd.text(),
+			name: zfd.text(),
+			height: zfd.numeric(),
+			width: zfd.numeric(),
 			price: zfd.numeric(),
 			stripePriceId: zfd.text(),
 			stripeProductId: zfd.text()

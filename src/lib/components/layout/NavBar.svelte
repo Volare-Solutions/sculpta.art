@@ -67,17 +67,9 @@
 				>All Pieces</a
 			>
 			<a
-				href="/products?tag=Watch This Drive"
+				href="/products?tag=Illuminate"
 				class="px-4 py-3 rounded-md hover:text-gray-600 cursor-pointer font-jura"
-				>Drive Collection</a
-			>
-			<a
-				href="/products?tag=Eyes On The Ball"
-				class="px-4 py-3 rounded-md hover:text-gray-600 cursor-pointer font-jura">Eye Collection</a
-			>
-			<a
-				href="/products?tag=Grow The Game"
-				class="px-4 py-3 rounded-md hover:text-gray-600 cursor-pointer font-jura">Grow Collection</a
+				>Illuminate Collection</a
 			>
 		</div>
 	</div>

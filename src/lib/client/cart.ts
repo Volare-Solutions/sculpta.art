@@ -7,7 +7,8 @@ export type TCartEntry = {
 	productImage: string;
 	productName: string;
 	size: {
-		size: string;
+		height: number;
+		width: number;
 		code: string;
 		stripePriceId: string;
 		price: number;

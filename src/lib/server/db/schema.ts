@@ -109,7 +109,8 @@ export const productSize = pgTable('product_size', {
 	name: text('name').notNull().default('my product'),
 	isAvailable: boolean('is_available').notNull().default(true),
 	price: integer('price').notNull(),
-	size: text('size').notNull(),
+	width: integer('width').notNull(),
+	height: integer('height').notNull(),
 	stripePriceId: text('stripe_price_id').notNull(),
 	stripeProductId: text('stripe_product_id').notNull(),
 	productId: text('product_id').notNull()

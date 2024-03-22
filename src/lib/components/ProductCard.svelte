@@ -18,7 +18,8 @@
 		desc: string;
 		sizes: {
 			code: string;
-			size: string;
+			height: number;
+			width: number;
 			name: string;
 			productId: string;
 			isAvailable: boolean;
@@ -97,7 +98,8 @@
 						productImage: itemData.cloudinaryId ?? '',
 						size: {
 							code: size.code,
-							size: size.size,
+							height: size.height,
+							width: size.width,
 							stripePriceId: size.stripePriceId,
 							price: size.price
 						},
@@ -183,7 +185,7 @@
 							>
 								<div class="font-bold">{size.name}</div>
 								<div class="flex flex-row gap-4 text-xs">
-									<div>{size.size}</div>
+									<div>{size.width}x{size.height}</div>
 									<div class="text-xs">${size.price / 100}</div>
 								</div>
 							</button>
@@ -198,7 +200,8 @@
 									productName: itemData.name,
 									productImage: itemData.cloudinaryId ?? '',
 									size: {
-										size: itemData.sizes[selectedSizeIdx].size,
+										height: itemData.sizes[selectedSizeIdx].height,
+										width: itemData.sizes[selectedSizeIdx].width,
 										code: itemData.sizes[selectedSizeIdx].code,
 										stripePriceId: itemData.sizes[selectedSizeIdx].stripePriceId,
 										price: itemData.sizes[selectedSizeIdx].price
@@ -262,7 +265,7 @@
 								on:click={() => (selectedSizeIdx = i)}
 								class={`text-xs ${
 									size.isAvailable ? 'bg-white' : 'line-through opacity-55'
-								}  rounded-full px-2 py-1`}>{size.size}</button
+								}  rounded-full px-2 py-1`}>{size.width}x{size.height}</button
 							>
 						</Drawer.Trigger>
 						<Drawer.Content class="px-2">
@@ -293,7 +296,7 @@
 									>
 										<div class="font-bold">{size.name}</div>
 										<div class="flex flex-row gap-4 text-xs">
-											<div>{size.size}</div>
+											<div>{size.width}x{size.height}</div>
 											<div class="text-xs">${size.price / 100}</div>
 										</div>
 									</button>
@@ -308,7 +311,8 @@
 											productName: itemData.name,
 											productImage: itemData.cloudinaryId ?? '',
 											size: {
-												size: size.size,
+												height: size.height,
+												width: size.width,
 												code: size.code,
 												stripePriceId: size.stripePriceId,
 												price: size.price
@@ -326,7 +330,7 @@
 					<span
 						class={`text-xs ${
 							size.isAvailable ? 'bg-white' : 'line-through opacity-55'
-						}  rounded-full px-2 py-1`}>{size.size}</span
+						}  rounded-full px-2 py-1`}>{size.width}x{size.width}</span
 					>
 				{/if}
 			{/each}

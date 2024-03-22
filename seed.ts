@@ -6,31 +6,32 @@ import {
 	productTag,
 	productToProductTag
 } from './src/lib/server/db/schema';
-import { drizzle } from 'drizzle-orm/planetscale-serverless';
-import { Client } from '@planetscale/database';
+
 import 'dotenv/config';
 
+import * as schema from './src/lib/server/db/schema';
+import { createPool } from '@vercel/postgres';
+import { drizzle } from 'drizzle-orm/vercel-postgres';
+
+// Load the connection string from environment variables
+const pool = createPool({
+	connectionString: process.env.POSTGRES_URL
+});
+
+export const db = drizzle(pool, { schema });
+
 const seed = async () => {
-	// crete db client
-	const client = new Client({
-		host: process.env.DATABASE_HOST ?? '',
-		username: process.env.DATABASE_USERNAME ?? '',
-		password: process.env.DATABASE_PASSWORD ?? ''
-	});
-
-	const db = drizzle(client);
-
 	// create some products
 	const products = [
 		{
-			name: 'Shirt I',
-			desc: 'The first shirt in our Drive Collection, embodying the concentration and accuracy needed in golf.',
-			id: 'drive_shirt_i'
+			name: 'Lamp I',
+			desc: 'The first lamp in our Illuminate Collection, embodying the warmth and comfort of a well-lit home.',
+			id: 'illuminate_lamp_i'
 		},
 		{
-			name: 'Shirt II',
-			desc: 'The second shirt in our Drive Collection, a testament to the precision and focus of the game.',
-			id: 'drive_shirt_ii'
+			name: 'Lamp II',
+			desc: 'The second lamp in our Illuminate Collection, a testament to the elegance and sophistication of modern design.',
+			id: 'illuminate_lamp_ii'
 		}
 	];
 
@@ -43,52 +44,40 @@ const seed = async () => {
 	// replace the stripeProductId and stripePriceId which you get from the dashboard
 	const productSizes = [
 		{
-			code: 'drive_shirt_i_M',
-			size: 'M',
-			price: 40,
-			stripeProductId: 'prod_PduSN2A5zbpwMJ',
-			stripePriceId: 'price_1OocdkGq88MAyKwhpaiBsCg0',
-			productId: 'drive_shirt_i'
+			code: 'illuminate_lamp_i_small',
+			height: 12,
+			width: 6,
+			price: 60,
+			stripeProductId: 'prod_PjX8jCckED4YgP',
+			stripePriceId: 'price_1Ou43wGq88MAyKwhJOek68Uq',
+			productId: 'illuminate_lamp_i'
 		},
 		{
-			code: 'drive_shirt_i_L',
-			size: 'L',
-			price: 40,
-			stripeProductId: 'prod_PduSN2A5zbpwMJ',
-			stripePriceId: 'price_1OocdkGq88MAyKwhpaiBsCg0',
-			productId: 'drive_shirt_i'
+			code: 'illuminate_lamp_i_large',
+			height: 18,
+			width: 9,
+			price: 80,
+			stripeProductId: 'prod_PmUor0OBNDG70N',
+			stripePriceId: 'price_1OwvorGq88MAyKwhrLhEQxjm',
+			productId: 'illuminate_lamp_i'
 		},
 		{
-			code: 'drive_shirt_i_XL',
-			size: 'XL',
-			price: 40,
-			stripeProductId: 'prod_PduSN2A5zbpwMJ',
-			stripePriceId: 'price_1OocdkGq88MAyKwhpaiBsCg0',
-			productId: 'drive_shirt_i'
+			code: 'illuminate_lamp_ii_small',
+			height: 12,
+			width: 6,
+			price: 60,
+			stripeProductId: 'prod_PmUpuBHgXAl3jr',
+			stripePriceId: 'price_1OwvpWGq88MAyKwhh6rc0er1',
+			productId: 'illuminate_lamp_ii'
 		},
 		{
-			code: 'drive_shirt_ii_M',
-			size: 'M',
-			price: 40,
-			stripeProductId: 'prod_Pg9lBrLuiQdTDD',
-			stripePriceId: 'price_1OqnRqGq88MAyKwhfRxgZRDS',
-			productId: 'drive_shirt_ii'
-		},
-		{
-			code: 'drive_shirt_ii_L',
-			size: 'L',
-			price: 40,
-			stripeProductId: 'prod_Pg9lBrLuiQdTDD',
-			stripePriceId: 'price_1OqnRqGq88MAyKwhfRxgZRDS',
-			productId: 'drive_shirt_ii'
-		},
-		{
-			code: 'drive_shirt_ii_XL',
-			size: 'XL',
-			price: 40,
-			stripeProductId: 'prod_Pg9lBrLuiQdTDD',
-			stripePriceId: 'price_1OqnRqGq88MAyKwhfRxgZRDS',
-			productId: 'drive_shirt_ii'
+			code: 'illuminate_lamp_ii_large',
+			height: 18,
+			width: 9,
+			price: 80,
+			stripeProductId: 'prod_PmUpEF0t9X9KZ5',
+			stripePriceId: 'price_1OwvpxGq88MAyKwhzyoiuJpw',
+			productId: 'illuminate_lamp_ii'
 		}
 	];
 
@@ -103,25 +92,25 @@ const seed = async () => {
 			cloudinaryId: 'drive_shirt_i_front',
 			width: 1920,
 			height: 1280,
-			productId: 'drive_shirt_i'
+			productId: 'illuminate_lamp_i'
 		},
 		{
 			cloudinaryId: 'drive_shirt_i_back',
 			width: 1920,
 			height: 1280,
-			productId: 'drive_shirt_i'
+			productId: 'illuminate_lamp_i'
 		},
 		{
 			cloudinaryId: 'drive_shirt_ii_front',
 			width: 1920,
 			height: 1280,
-			productId: 'drive_shirt_ii'
+			productId: 'illuminate_lamp_ii'
 		},
 		{
 			cloudinaryId: 'drive_shirt_ii_back',
 			width: 1920,
 			height: 1280,
-			productId: 'drive_shirt_ii'
+			productId: 'illuminate_lamp_ii'
 		}
 	];
 
@@ -132,12 +121,8 @@ const seed = async () => {
 	// create some product tags
 	const productTags = [
 		{
-			name: 'Watch This Drive',
-			desc: 'Focused and precise, this collection embodies the concentration and accuracy needed in golf.'
-		},
-		{
-			name: 'Grow the Game',
-			desc: 'Inspired by the growth and evolution of golf, this collection represents the future of the sport.'
+			name: 'Illuminate',
+			desc: 'Shedding light on the art of 3D printing, this collection embodies the elegance and innovation of our unique lamps.'
 		}
 	];
 
@@ -148,12 +133,12 @@ const seed = async () => {
 	// attach tags to products
 	const productsToTags = [
 		{
-			productId: 'drive_shirt_i',
-			tagId: 'Watch This Drive'
+			productId: 'illuminate_lamp_i',
+			tagId: 'Illuminate'
 		},
 		{
-			productId: 'drive_shirt_ii',
-			tagId: 'Watch This Drive'
+			productId: 'illuminate_lamp_ii',
+			tagId: 'Illuminate'
 		}
 	];
 

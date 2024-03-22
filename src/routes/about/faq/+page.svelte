@@ -10,25 +10,21 @@
 
 	<div class="grow px-4">
 		<div class="w-full flex flex-col pt-4 px-2">
-			<h3 class="text-center font-jura text-5xl pb-8">What is Sediment Art?</h3>
+			<h3 class="text-center font-jura text-5xl pb-8">What is Sculpta Art?</h3>
 			<p class="text-center text-lg font-light pb-4">
-				We take photos of the natural beauty in nature and the world, and print them onto glass for
-				you to display in your home or office.
+				We bring the beauty of art and technology together, creating unique 3D printed decor for your home or office.
 			</p>
 
 			<p class="text-center text-lg font-light pb-8">
-				We sell made to order prints, and have them delivered right to your door.
+				We craft each piece to order, ensuring a unique blend of design and personal touch, and deliver it right to your door.
 			</p>
 		</div>
 
 		<Accordion.Root class="w-full">
 			<Accordion.Item value="q-1">
 				<Accordion.Trigger class="md:text-2xl font-jura text-xl"
-					>What are you selling?</Accordion.Trigger
-				>
-				<Accordion.Content class=" font-light"
-					>Sediment Art is an online store, selling world class glass prints of in house custom made
-					art. We take, produce, and edit all of our own images.</Accordion.Content
+					>What are you selling?</Accordion.Trigger>
+				<Accordion.Content class=" font-light">We are an online store specializing in 3D printed decor. Our collection includes a variety of unique lamps, each designed and printed in-house. We handle every step of the process, from design to production, ensuring the highest quality for our pieces.</Accordion.Content
 				>
 			</Accordion.Item>
 			<Accordion.Item value="q-2">
@@ -40,22 +36,13 @@
 					house.</Accordion.Content
 				>
 			</Accordion.Item>
-			<Accordion.Item value="q-3">
-				<Accordion.Trigger class="md:text-2xl font-jura text-xl">
-					What are these pictures of?</Accordion.Trigger
-				>
-				<Accordion.Content
-					>These are all (currently) rocks. Each millions of years old, often the size of a coin.</Accordion.Content
-				>
-			</Accordion.Item>
 			<Accordion.Item value="q-5">
 				<Accordion.Trigger class="md:text-2xl font-jura text-xl">
-					How do you make your pieces?</Accordion.Trigger
-				>
-				<Accordion.Content
-					>We use <a href="https://fractureme.com/" target="_blank" class="underline">Fracture</a> for
-					our pieces. They create world class glass pieces, and were perfect for fulfilling our art.</Accordion.Content
-				>
+					How do you make your pieces?
+				</Accordion.Trigger>
+				<Accordion.Content>
+					We use <a href="https://www.creality.com/" target="_blank" class="underline">Creality 3D printers</a> for our pieces. They create world-class 3D printers, perfect for crafting our unique pieces.
+				</Accordion.Content>
 			</Accordion.Item>
 			<Accordion.Item value="q-6">
 				<Accordion.Trigger class="md:text-2xl font-jura text-xl">
@@ -70,7 +57,7 @@
 					Can I use the images on this site?</Accordion.Trigger
 				>
 				<Accordion.Content
-					>No. All images and art pieces on Sediment Art are copywritten.</Accordion.Content
+					>No. All images and art pieces on Sculpta Art are copywritten.</Accordion.Content
 				>
 			</Accordion.Item>
 		</Accordion.Root>

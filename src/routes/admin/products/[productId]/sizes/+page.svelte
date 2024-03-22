@@ -107,8 +107,39 @@
 					</div>
 
 					<div class="gap-1.5 grid">
-						<Label for="size">Size</Label>
-						<Input name="size" required id="size" class="w-full" type="text" placeholder="L" />
+						<Label for="name">Name</Label>
+						<Input
+							name="name"
+							required
+							id="name"
+							class="w-full"
+							type="text"
+							placeholder="Medium"
+						/>
+					</div>
+	
+					<div class="gap-1.5 grid">
+						<Label for="width">Width</Label>
+						<Input
+							name="width"
+							required
+							id="width"
+							class="w-full"
+							type="number"
+							placeholder="6"
+						/>
+					</div>
+	
+					<div class="gap-1.5 grid">
+						<Label for="height">Height</Label>
+						<Input
+							name="height"
+							required
+							id="height"
+							class="w-full"
+							type="number"
+							placeholder="12"
+						/>
 					</div>
 
 					<div class="gap-1.5 grid">
@@ -172,7 +203,7 @@
 				{#each data.sizes as size, i (i)}
 					<Table.Row>
 						<Table.Cell class="font-medium">{size.code}</Table.Cell>
-						<Table.Cell>{size.size}</Table.Cell>
+						<Table.Cell>{size.name}</Table.Cell>
 						<Table.Cell>{`$${(size.price / 100).toFixed(2)}`}</Table.Cell>
 						<Table.Cell>{size.stripePriceId}</Table.Cell>
 						<Table.Cell>{size.stripeProductId}</Table.Cell>
@@ -228,9 +259,6 @@
 			}
 		}}
 	>
-		<Sheet.Trigger>
-			<Button class="text-white bg-green-600"><PlusCircle class="w-4 h-4 mr-2" />Edit Size</Button>
-		</Sheet.Trigger>
 		<Sheet.Content>
 			<Sheet.Header class="mb-4">
 				<Sheet.Title>Edit Size</Sheet.Title>
@@ -258,15 +286,39 @@
 				</div>
 
 				<div class="gap-1.5 grid">
-					<Label for="size">Size</Label>
+					<Label for="name">Name</Label>
 					<Input
-						name="size"
+						name="name"
 						required
-						id="size"
+						id="name"
 						class="w-full"
 						type="text"
-						placeholder="L"
-						value={data.sizes[editIdx].size}
+						placeholder="Medium"
+						value={data.sizes[editIdx].name}
+					/>
+				</div>
+
+				<div class="gap-1.5 grid">
+					<Label for="width">Width</Label>
+					<Input
+						name="width"
+						required
+						id="width"
+						class="w-full"
+						type="number"
+						value={data.sizes[editIdx].width}
+					/>
+				</div>
+
+				<div class="gap-1.5 grid">
+					<Label for="height">Height</Label>
+					<Input
+						name="height"
+						required
+						id="height"
+						class="w-full"
+						type="number"
+						value={data.sizes[editIdx].height}
 					/>
 				</div>
 

@@ -178,7 +178,7 @@
 							</div>
 						</div>
 						<div class="text-xl text-neutral-600">
-							{cartItem.size.size}
+							{cartItem.size.width}x{cartItem.size.height}
 						</div>
 						<div class="flex flex-row items-center gap-3">
 							<Button

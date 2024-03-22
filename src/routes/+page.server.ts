@@ -64,7 +64,7 @@ export const load = async () => {
 						availableSizes: p.product.sizes
 							.map((s) => {
 								if (s.isAvailable) {
-									return `${s.size}`;
+									return `${s.width}x${s.height}`;
 								} else {
 									return '';
 								}
@@ -73,7 +73,7 @@ export const load = async () => {
 						soldOutSizes: p.product.sizes
 							.map((s) => {
 								if (!s.isAvailable) {
-									return `${s.size}`;
+									return `${s.width}x${s.height}`;
 								} else {
 									return '';
 								}
